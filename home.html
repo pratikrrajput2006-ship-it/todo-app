@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <div class="product-logo">
+      <div class="left">
+        <lottie-player
+          src="/assets/json/to-do-list.json"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+        >
+        </lottie-player>
+      </div>
+      <h1 id="main-logo">to-do-list</h1>
+    </div>
+    <div class="container">
+      <div class="information">
+        <h1 id="title">Build Your Day</h1>
+        <p>
+          Plan your daily activities with ease. Our to-do system helps you
+          prioritize what matters, stay productive, and accomplish your goals
+          step by step. Start building a smarter routine today.
+        </p>
+        <div class="buttons">
+          <button
+            aria-expanded="false"
+            aria-controls="Sign-in"
+            id="sign-in"
+            class="design"
+          >
+            Sign-in
+          </button>
+          <button
+            aria-expanded="false"
+            aria-controls="Sign-up"
+            id="sign-up"
+            class="design"
+          >
+            Sign-up
+          </button>
+        </div>
+      </div>
+    </div>
+    <form class="sign-form" id="Sign-in">
+      <div class="contain">
+        <h2>Sign in To do</h2>
+        <div class="icons">
+          <div class="icon">
+            <img src="/assets/svg/google.svg" height="20px" />
+          </div>
+          <div class="icon">
+            <img src="/assets/svg/github.svg" height="20px" />
+          </div>
+          <div class="icon">
+            <img src="/assets/svg/facebook.svg" height="20px" />
+          </div>
+          <div class="icon">
+            <img src="/assets/svg/linkedin.svg" height="20px" />
+          </div>
+        </div>
+        <input type="text" name="Name" />
+        <label for="Name" id="one" class="fix">Name:</label>
+        <input type="email" name="email" required />
+        <label for="email" id="two" class="fix">Email:</label>
+        <input type="password" name="password" required />
+        <label for="password" id="three" class="fix">Password:</label>
+        <button class="design" type="submit">Submit</button>
+      </div>
+    </form>
+    <form class="sign-form" height="500px" id="Sign-up">
+      <div class="contain">
+        <h2>Sign up To do</h2>
+        <div class="icons">
+          <div class="icon">
+            <img src="/assets/svg/google.svg" height="20px" />
+          </div>
+          <div class="icon">
+            <img src="/assets/svg/github.svg" height="20px" />
+          </div>
+          <div class="icon">
+            <img src="/assets/svg/facebook.svg" height="20px" />
+          </div>
+          <div class="icon">
+            <img src="/assets/svg/linkedin.svg" height="20px" />
+          </div>
+        </div>
+        <input type="email" name="email" required />
+        <label for="email" id="one" class="fix">Email:</label>
+        <input type="password" name="password" required />
+        <label for="password" id="two" class="fix">Password:</label>
+        <button class="design" type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+  <script>
+    const signinBtn = document.querySelector("#sign-in");
+    const inForm = document.querySelector("#Sign-in");
+    const signupBtn = document.querySelector("#sign-up");
+    const upForm = document.querySelector("#Sign-up");
+    const container = document.querySelector(".container");
+    signinBtn.addEventListener("click", () => {
+      setTimeout(() => {
+        inForm.classList.add("active");
+        container.classList.add("blur");
+      }, 100);
+    });
+    signupBtn.addEventListener("click", () => {
+      setTimeout(() => {
+        upForm.classList.add("active");
+        container.classList.add("blur");
+      }, 100);
+    });
+  </script>
+</html>
