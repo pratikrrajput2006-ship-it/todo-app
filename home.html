@@ -53,74 +53,96 @@
         </div>
       </div>
     </div>
-    <form class="sign-form" id="Sign-in">
-      <div class="contain">
-        <h2>Sign in To do</h2>
-        <div class="icons">
-          <div class="icon">
-            <img src="/assets/svg/google.svg" height="20px" />
+    <div class="form1" id="Sign-in-aria">
+      <button class="remove-btn1">
+        <img src="/assets/svg/xmark.svg" height="20px" alt="" />
+      </button>
+      <form class="sign-form" id="Sign-in">
+        <div class="contain">
+          <h2>Sign in To do</h2>
+          <div class="icons">
+            <div class="icon">
+              <img src="/assets/svg/google.svg" height="20px" />
+            </div>
+            <div class="icon">
+              <img src="/assets/svg/github.svg" height="20px" />
+            </div>
+            <div class="icon">
+              <img src="/assets/svg/facebook.svg" height="20px" />
+            </div>
+            <div class="icon">
+              <img src="/assets/svg/linkedin.svg" height="20px" />
+            </div>
           </div>
-          <div class="icon">
-            <img src="/assets/svg/github.svg" height="20px" />
-          </div>
-          <div class="icon">
-            <img src="/assets/svg/facebook.svg" height="20px" />
-          </div>
-          <div class="icon">
-            <img src="/assets/svg/linkedin.svg" height="20px" />
-          </div>
+          <input type="text" name="Name" required />
+          <label for="Name" id="one" class="fix">Name:</label>
+          <input type="email" name="email" required />
+          <label for="email" id="two" class="fix">Email:</label>
+          <input type="password" name="password" required />
+          <label for="password" id="three" class="fix">Password:</label>
+          <button class="design" type="submit">Submit</button>
         </div>
-        <input type="text" name="Name" />
-        <label for="Name" id="one" class="fix">Name:</label>
-        <input type="email" name="email" required />
-        <label for="email" id="two" class="fix">Email:</label>
-        <input type="password" name="password" required />
-        <label for="password" id="three" class="fix">Password:</label>
-        <button class="design" type="submit">Submit</button>
-      </div>
-    </form>
-    <form class="sign-form" height="500px" id="Sign-up">
-      <div class="contain">
-        <h2>Sign up To do</h2>
-        <div class="icons">
-          <div class="icon">
-            <img src="/assets/svg/google.svg" height="20px" />
+      </form>
+    </div>
+    <div class="form2" id="Sign-up-aria">
+      <button class="remove-btn2">
+        <img src="/assets/svg/xmark.svg" height="20px" alt="" />
+      </button>
+      <form class="sign-form" height="500px" id="Sign-up">
+        <div class="contain">
+          <h2>Sign up To do</h2>
+          <div class="icons">
+            <div class="icon">
+              <img src="/assets/svg/google.svg" height="20px" />
+            </div>
+            <div class="icon">
+              <img src="/assets/svg/github.svg" height="20px" />
+            </div>
+            <div class="icon">
+              <img src="/assets/svg/facebook.svg" height="20px" />
+            </div>
+            <div class="icon">
+              <img src="/assets/svg/linkedin.svg" height="20px" />
+            </div>
           </div>
-          <div class="icon">
-            <img src="/assets/svg/github.svg" height="20px" />
-          </div>
-          <div class="icon">
-            <img src="/assets/svg/facebook.svg" height="20px" />
-          </div>
-          <div class="icon">
-            <img src="/assets/svg/linkedin.svg" height="20px" />
-          </div>
+          <input type="email" name="email" required />
+          <label for="email" id="one" class="fix">Email:</label>
+          <input type="password" name="password" required />
+          <label for="password" id="two" class="fix">Password:</label>
+          <button class="design" type="submit">Submit</button>
         </div>
-        <input type="email" name="email" required />
-        <label for="email" id="one" class="fix">Email:</label>
-        <input type="password" name="password" required />
-        <label for="password" id="two" class="fix">Password:</label>
-        <button class="design" type="submit">Submit</button>
-      </div>
-    </form>
+      </form>
+    </div>
   </body>
   <script>
-    const signinBtn = document.querySelector("#sign-in");
-    const inForm = document.querySelector("#Sign-in");
-    const signupBtn = document.querySelector("#sign-up");
-    const upForm = document.querySelector("#Sign-up");
-    const container = document.querySelector(".container");
-    signinBtn.addEventListener("click", () => {
-      setTimeout(() => {
-        inForm.classList.add("active");
-        container.classList.add("blur");
-      }, 100);
+    const container=document.querySelector(".container");
+    const form1 = document.querySelector(".form1");
+    const form2 = document.querySelector(".form2");
+
+    const signinbtn = document.querySelector("#sign-in");
+    const signupbtn = document.querySelector("#sign-up");
+
+    const remove1 = document.querySelector(".remove-btn1");
+    const remove2 = document.querySelector(".remove-btn2");
+
+    signinbtn.addEventListener("click", () => {
+      form1.classList.add("active");
+      container.classList.add("blur");
     });
-    signupBtn.addEventListener("click", () => {
-      setTimeout(() => {
-        upForm.classList.add("active");
-        container.classList.add("blur");
-      }, 100);
+    remove1.addEventListener("click", () => {
+      form1.classList.remove("active");
+      container.classList.remove("blur");
+
+    });
+    signupbtn.addEventListener("click", () => {
+      form2.classList.add("active");
+      container.classList.add("blur");
+
+    });
+    remove2.addEventListener("click", () => {
+      form2.classList.remove("active");
+      container.classList.remove("blur");
+
     });
   </script>
 </html>
