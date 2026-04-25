@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="/css/signin.css">
+  </head>
+  <body>
+    <div class="product-logo">
+      <div class="left">
+        <lottie-player
+          src="/assets/json/to-do-list.json"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+        >
+        </lottie-player>
+      </div>
+      <h1 id="main-logo">To-Do</h1>
+    </div>
+    <div class="container">
+      <div role="tablist" class="bar">
+        <div
+          role="tab"
+          class="tokens"
+          aria-controls="one"
+          aria-selected="false"
+        >
+          Dashbord
+        </div>
+        <div role="tab" class="tokens" aria-controls="two" aria-selected="true">
+          Vital Task
+        </div>
+        <div
+          role="tab"
+          class="tokens"
+          aria-controls="three"
+          aria-selected="false"
+        >
+          My task
+        </div>
+        <div
+          role="tab"
+          class="tokens"
+          aria-controls="four"
+          aria-selected="false"
+        >
+          Task Catagory
+        </div>
+        <div
+          role="tab"
+          class="tokens"
+          aria-controls="five"
+          aria-selected="false"
+        >
+          Help
+        </div>
+      </div>
+      <div class="big-container" role="tabpanel" id="one" hidden>
+        <h1>Data is not Available</h1>
+      </div>
+      <div class="big-container" role="tabpanel" id="two">
+        <h1>Create New Task</h1>
+      </div>
+      <div class="big-container" role="tabpanel" id="three" hidden>
+        <h1>Selected Task</h1>
+      </div>
+      <div class="big-container" role="tabpanel" id="four" hidden>
+        <h1>Catageory of Task</h1>
+      </div>
+      <div class="big-container" role="tabpanel" id="five" hidden>
+        <h1>Help</h1>
+      </div>
+    </div>
+  </body>
+  <script src="/js/signin.js"></script>
+</html>

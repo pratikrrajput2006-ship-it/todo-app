@@ -1,0 +1,24 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "A modern and scalable To-Do application designed to improve productivity through task management.\r This project is being developed incrementally with a focus on clean UI, structured code, and real-world application features.",
+  "homepage": "https://github.com/pratikrrajput2006-ship-it/todo-app#readme",
+  "bugs": {
+    "url": "https://github.com/pratikrrajput2006-ship-it/todo-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pratikrrajput2006-ship-it/todo-app.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
