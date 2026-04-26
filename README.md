@@ -2,17 +2,43 @@
 
 ## 📖 Overview
 
-A modern and scalable To-Do application designed to improve productivity through task management.
-This project is being developed incrementally with a focus on clean UI, structured code, and real-world application features.
+A modern and scalable To-Do application focused on improving productivity through structured task management.
+The project is being developed step-by-step with emphasis on clean UI, modular code, and real-world features.
 
 ---
 
 ## ✨ Current Features
 
+### 🔹 UI & Navigation
+
+* Sidebar tab system (accessible with ARIA roles)
+* Dynamic tab switching with active state styling
+* Clean dashboard layout
+
+### 🔹 Task Management (NEW 🚀)
+
+* Add tasks using modal form
+* Dynamic task rendering (DOM manipulation)
+* Delete tasks instantly
+* Checkbox for task completion (UI ready)
+
+### 🔹 Form System
+
+* Modal-based task input form
+* Input + textarea handling
+* Auto reset after submission
+* Form visibility toggle (fixed bug ✅)
+
+### 🔹 UI Enhancements
+
+* Background blur modal effect
+* Responsive flex layout
+* Improved spacing and alignment
+* Fixed z-index & layering issues
+
+### 🔹 Other Features
+
 * Authentication UI (Sign-in / Sign-up)
-* Clean and minimal interface
-* Modal-based form interaction
-* Background blur effect for focus
 * Social login UI (Google, GitHub, LinkedIn, Facebook)
 * Lottie animation integration
 
@@ -21,8 +47,8 @@ This project is being developed incrementally with a focus on clean UI, structur
 ## 🛠️ Tech Stack
 
 * HTML5
-* CSS3 (Flexbox, Positioning, UI Styling)
-* JavaScript (DOM Manipulation)
+* CSS3 (Flexbox, Positioning, Z-index handling)
+* JavaScript (DOM Manipulation, Event Handling)
 * Lottie Player
 
 ---
@@ -40,44 +66,45 @@ index.html  → Main entry file
 
 ## 🚀 Development Roadmap
 
-### 🔹 Phase 1: UI Foundation
+### 🔹 Phase 1: UI Foundation ✅
 
 * Authentication interface
 * Layout and design system
 * Basic interactions
 
-### 🔹 Phase 2: Core Functionality
+### 🔹 Phase 2: Core Functionality 🚧
 
-* Form validation (email, password rules)
-* Toggle logic improvements
-* Responsive design (mobile support)
+* Form validation
+* Improved tab accessibility
+* Responsive design
 
-### 🔹 Phase 3: To-Do Features
+### 🔹 Phase 3: To-Do Features 🚧 (In Progress)
 
-* Task creation and deletion
-* Task status management (complete/incomplete)
-* Local storage integration
+* Task creation ✅
+* Task deletion ✅
+* Task completion toggle (UI ready)
+* Local storage integration (next step)
 
 ### 🔹 Phase 4: Advanced Features
 
-* Drag & drop task management
-* Filtering and sorting tasks
-* Dark mode support
+* Drag & drop tasks
+* Filtering & sorting
+* Dark mode
 
 ### 🔹 Phase 5: Backend Integration
 
-* User authentication (Firebase / Node.js)
+* Authentication (Firebase / Node.js)
 * Database integration
-* API-based task management
+* API-based task handling
 
 ---
 
 ## 🎯 Future Enhancements
 
-* OAuth login (Google Sign-In)
+* Persistent data (LocalStorage / DB)
 * Notifications & reminders
 * Performance optimization
-* Accessibility improvements (ARIA compliance)
+* Accessibility improvements (ARIA support)
 
 ---
 
@@ -89,17 +116,19 @@ index.html  → Main entry file
 
 ## 🧠 Learning Focus
 
-* Frontend architecture
-* UI/UX design principles
-* State handling in JavaScript
-* Scalable project structuring
+* DOM manipulation in real projects
+* UI/UX structuring
+* State handling in vanilla JavaScript
+* Debugging real-world frontend issues (CSS vs JS)
 
+---
 
 ## 👤 Author
 
 Pratik Rajput
 
+---
 
 ## 📌 Status
 
-🚧 In Active Development
+🚧 Active Development — Recently added task system and fixed UI interaction bugs
