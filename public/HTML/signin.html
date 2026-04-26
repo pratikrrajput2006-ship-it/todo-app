@@ -83,25 +83,39 @@
               /><b>Vital</b> Task
             </div>
             <span>
-              <img src="/assets/svg/delete.svg" alt="" srcset="" />
-              <button id="task-creator">
+              <button class="task-creator" id="openForm">
                 <img src="/assets/svg/plus.svg" height="20px" />Create Task
               </button></span
             >
           </div>
 
           <div class="card">
-            <input type="checkbox" name="checkbox" id="checkbox" />
+            <input type="checkbox" />
             <div class="info">
               <div class="tiltle-div">
                 <h4>Title:</h4>
-                <span>Dog</span>
+                <span>..........</span>
               </div>
-              <p>Walk the Dog</p>
+              <p>..........................</p>
+            </div>
+            <div class="box">
+              <img src="/assets/svg/delete.svg" alt="" srcset="" class="delete-btn" id="delete" />
             </div>
           </div>
         </div>
-        <div class="details" id="titles"></div>
+        <div class="details" id="titles">
+          <div class="contain-card">
+            <div class="control-title">
+              <label for="input">Title:</label>
+              <input type="text" name="title" id="input" />
+              <label for="textarea">Information:</label>
+              <textarea name="" id="textarea" cols="30" rows="3"></textarea>
+              <button type="submit" class="task-creator" id="cbtn">
+                Task Created
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="big-container" role="tabpanel" id="three" hidden>
         <h1>Selected Task</h1>
