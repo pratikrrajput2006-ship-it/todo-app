@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <link rel="stylesheet" href="/css/signin.css">
+    <link rel="stylesheet" href="/css/signin.css" />
   </head>
   <body>
     <div class="product-logo">
@@ -29,10 +29,16 @@
           aria-controls="one"
           aria-selected="false"
         >
+          <img src="/assets/svg/dashbord.svg" height="18px" alt="" srcset="" />
           Dashbord
         </div>
         <div role="tab" class="tokens" aria-controls="two" aria-selected="true">
-          Vital Task
+          <img
+            src="/assets/svg/Vital.svg"
+            height="18px"
+            alt=""
+            srcset=""
+          />Vital Task
         </div>
         <div
           role="tab"
@@ -40,6 +46,7 @@
           aria-controls="three"
           aria-selected="false"
         >
+          <img src="/assets/svg/task.svg" height="18px" alt="" srcset="" />
           My task
         </div>
         <div
@@ -48,6 +55,7 @@
           aria-controls="four"
           aria-selected="false"
         >
+          <img src="/assets/svg/cat.svg" height="18px" alt="" srcset="" />
           Task Catagory
         </div>
         <div
@@ -56,6 +64,7 @@
           aria-controls="five"
           aria-selected="false"
         >
+          <img src="/assets/svg/help.svg" height="18px" alt="" srcset="" />
           Help
         </div>
       </div>
@@ -63,7 +72,36 @@
         <h1>Data is not Available</h1>
       </div>
       <div class="big-container" role="tabpanel" id="two">
-        <h1>Create New Task</h1>
+        <div class="details" id="core">
+          <div class="core-head">
+            <div class="head">
+              <img
+                src="/assets/svg/Vital.svg"
+                height="25px"
+                class="icon-black"
+                srcset=""
+              /><b>Vital</b> Task
+            </div>
+            <span>
+              <img src="/assets/svg/delete.svg" alt="" srcset="" />
+              <button id="task-creator">
+                <img src="/assets/svg/plus.svg" height="20px" />Create Task
+              </button></span
+            >
+          </div>
+
+          <div class="card">
+            <input type="checkbox" name="checkbox" id="checkbox" />
+            <div class="info">
+              <div class="tiltle-div">
+                <h4>Title:</h4>
+                <span>Dog</span>
+              </div>
+              <p>Walk the Dog</p>
+            </div>
+          </div>
+        </div>
+        <div class="details" id="titles"></div>
       </div>
       <div class="big-container" role="tabpanel" id="three" hidden>
         <h1>Selected Task</h1>
