@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const tabs = document.querySelectorAll('[role="tab"]');
 
   tabs.forEach((tab) => {
@@ -65,19 +64,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   buttonC.addEventListener("click", () => {
     if (storeinput !== "" && storetextarea !== "") {
-
       core.innerHTML += `
         <div class="card">
-          <input type="checkbox" />
-          <div class="info">
-            <div class="tiltle-div">
-              <h4>Title:</h4>
-              <span>${storeinput}</span>
+            <div class="animations">
+              <lottie-player
+                id="checkAnim"
+                src="/assets/json/checkbox.json"
+                background="transparent"
+                speed="1"
+              >
+              </lottie-player>
+              <img src="/assets/svg/star.svg" class="star" height="28px" alt="" />
             </div>
-            <p>${storetextarea}</p>
-          </div>
-          <div class="box">
-            <img src="/assets/svg/delete.svg" class="delete-btn"/>
+
+            <div class="info">
+              <div class="tiltle-div">
+                <h4>Title:</h4>
+                <span>${storeinput}</span>
+              </div>
+              <p>${storetextarea}</p>
+            </div>
+            <div class="box">
+              <img
+                src="/assets/svg/delete.svg"
+                alt=""
+                srcset=""
+                class="delete-btn"
+                id="delete"
+              />
+            </div>
           </div>
         </div>
       `;
@@ -101,5 +116,34 @@ document.addEventListener("DOMContentLoaded", () => {
       card.remove();
     }
   });
+});
+core.addEventListener("click", (e) => {
+  if (e.target.tagName === "LOTTIE-PLAYER") {
+    const anim = e.target;
 
+    if (!anim.dataset.checked) {
+      anim.play();
+
+      anim.addEventListener(
+        "complete",
+        () => {
+          anim.pause();
+          anim.seek("80%");
+        },
+        { once: true }
+      );
+
+      anim.dataset.checked = "true";
+    } else {
+      anim.pause();
+      anim.seek("0%");
+      anim.dataset.checked = "";
+    }
+  }
+});
+
+core.addEventListener("click", (e) => {
+  if (e.target.classList.contains("star")) {
+    e.target.classList.toggle("active");
+  }
 });

@@ -285,3 +285,26 @@ b {
   position: relative;
   z-index: 10000;
 }
+.animations{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:5px;
+}
+
+.animations lottie-player {
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+.star {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* active (vital) */
+.star.active {
+  filter:invert(1);
+  transform: scale(1.1);
+}
