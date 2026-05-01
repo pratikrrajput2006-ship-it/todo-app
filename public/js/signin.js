@@ -1,4 +1,8 @@
+import { getData } from "./common.js";
+
 document.addEventListener("DOMContentLoaded", () => {
+  const user = getData();
+
   const tabs = document.querySelectorAll('[role="tab"]');
 
   tabs.forEach((tab) => {
@@ -62,51 +66,47 @@ document.addEventListener("DOMContentLoaded", () => {
     storetextarea = textarea.value;
   });
 
-  buttonC.addEventListener("click", () => {
-    if (storeinput !== "" && storetextarea !== "") {
-      core.innerHTML += `
-        <div class="card">
-            <div class="animations">
-              <lottie-player
-                id="checkAnim"
-                src="/assets/json/checkbox.json"
-                background="transparent"
-                speed="1"
-              >
-              </lottie-player>
-              <img src="/assets/svg/star.svg" class="star" height="28px" alt="" />
-            </div>
+ buttonC.addEventListener("click", () => {
+  if (input.value.trim() && textarea.value.trim()) {
 
-            <div class="info">
-              <div class="tiltle-div">
-                <h4>Title:</h4>
-                <span>${storeinput}</span>
-              </div>
-              <p>${storetextarea}</p>
-            </div>
-            <div class="box">
-              <img
-                src="/assets/svg/delete.svg"
-                alt=""
-                srcset=""
-                class="delete-btn"
-                id="delete"
-              />
-            </div>
-          </div>
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <div class="animations">
+        <lottie-player
+          src="/assets/json/checkbox.json"
+          background="transparent"
+          speed="1"
+        ></lottie-player>
+        <img src="/assets/svg/star.svg" class="star" height="28px" />
+      </div>
+
+      <div class="info">
+        <div class="tiltle-div">
+          <h4>Title:</h4>
+          <span></span>
         </div>
-      `;
+        <p></p>
+      </div>
 
-      // clear inputs
-      input.value = "";
-      textarea.value = "";
-      storeinput = "";
-      storetextarea = "";
+      <div class="box">
+        <img src="/assets/svg/delete.svg" class="delete-btn" />
+      </div>
+    `;
 
-      // hide form (moved inside if)
-      containCard.classList.remove("display");
-    }
-  });
+    // 🔥 SAFE TEXT INSERTION
+    card.querySelector("span").textContent = input.value;
+    card.querySelector("p").textContent = textarea.value;
+
+    core.appendChild(card);
+
+    // reset
+    input.value = "";
+    textarea.value = "";
+    containCard.classList.remove("display");
+  }
+
 
   ////// delete task //////
 
@@ -147,3 +147,11 @@ core.addEventListener("click", (e) => {
     e.target.classList.toggle("active");
   }
 });
+const circle=document.querySelector(".circle");
+const email=document.querySelector("#emails");
+const emailcollector=user.email.trim();
+const nameF=emailcollector.slice(0,1);
+circle.innerHTML=nameF.toUpperCase();
+email.value=emailcollector;
+});
+

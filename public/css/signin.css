@@ -78,7 +78,48 @@ body {
 .tokens:hover {
   transform: scale(1.03);
 }
-
+#profile{
+  position: relative;
+  bottom: -160px;
+  background:rgb(240, 53, 53);
+  border: 1px solid rgb(240, 53, 53);
+  padding: 10px;
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+#profile:hover{
+   transform: scale(1);
+}
+.circle{
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:20px;
+  border-radius: 50%;
+  color: #fff;
+}
+.line{
+  height:100%;
+  width: 0.5px;
+  background-color: #333;
+}
+.email{
+  height: 100%;
+  width: 80%;
+}
+.email input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border-radius: none;
+  border: none;
+  background: transparent;
+  color: #f8fafc;
+}
 /* Active tab */
 .utility {
   background: #000;
@@ -171,7 +212,6 @@ b {
   font-weight: 500;
   cursor: pointer;
 }
-
 /* Card */
 .card {
   width: 100%;
@@ -307,4 +347,21 @@ b {
 .star.active {
   filter:invert(1);
   transform: scale(1.1);
+}
+.info {
+  flex: 1;
+  min-width: 0; /* 🔥 critical for flex */
+  text-align: left;
+}
+
+.info p {
+  margin-top: 5px;
+  white-space: pre-wrap; /* keeps line breaks */
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
 }
