@@ -40,14 +40,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  ////// vital task ////////
-
   const createTask = document.querySelector("#openForm");
   const containCard = document.querySelector(".contain-card");
 
   createTask.addEventListener("click", () => {
     console.log("click");
-    containCard.classList.add("display");
+    containCard.classList.toggle("display");
   });
 
   const buttonC = document.querySelector("#cbtn");
@@ -74,12 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     card.innerHTML = `
       <div class="animations">
-        <lottie-player
-          src="/assets/json/checkbox.json"
-          background="transparent"
-          speed="1"
-        ></lottie-player>
-        <img src="/assets/svg/star.svg" class="star" height="28px" />
+        <div class="animations">
+              <input type="checkbox" name="" id="bone">
+            </div>
       </div>
 
       <div class="info">
@@ -110,48 +105,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
   ////// delete task //////
 
-  core.addEventListener("click", (e) => {
+});
+core.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-btn")) {
       const card = e.target.closest(".card");
       card.remove();
     }
   });
-});
-core.addEventListener("click", (e) => {
-  if (e.target.tagName === "LOTTIE-PLAYER") {
-    const anim = e.target;
-
-    if (!anim.dataset.checked) {
-      anim.play();
-
-      anim.addEventListener(
-        "complete",
-        () => {
-          anim.pause();
-          anim.seek("80%");
-        },
-        { once: true }
-      );
-
-      anim.dataset.checked = "true";
-    } else {
-      anim.pause();
-      anim.seek("0%");
-      anim.dataset.checked = "";
+const details=document.querySelector(".details");
+details.addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete-btn")) {
+      const card = e.target.closest(".card");
+      card.remove();
     }
-  }
-});
-
-core.addEventListener("click", (e) => {
-  if (e.target.classList.contains("star")) {
-    e.target.classList.toggle("active");
-  }
-});
+  });
 const circle=document.querySelector(".circle");
 const email=document.querySelector("#emails");
 const emailcollector=user.email.trim();
 const nameF=emailcollector.slice(0,1);
 circle.innerHTML=nameF.toUpperCase();
 email.value=emailcollector;
+
+//..........task complete or not..............
+
+core.addEventListener("click", (e) => {
+
+  // detect checkbox click
+  if (e.target.id === "bone") {
+
+    const card = e.target.closest(".card");   // get clicked card
+    const two = document.querySelector("#two_dase");
+
+    if (e.target.checked) {
+      two.appendChild(card);   // move to vital
+    } else {
+      core.appendChild(card);  // move back
+    }
+  }
+
+});
 });
 
