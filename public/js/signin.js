@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
   email.value = emailcollector;
 
   //..........task complete or not..............
-
+  const loading = document.querySelector(".loading");
   core.addEventListener("click", (e) => {
     // detect checkbox click
     if (e.target.id === "bone") {
@@ -132,21 +132,27 @@ document.addEventListener("DOMContentLoaded", () => {
       const two = document.querySelector("#two_dase");
 
       if (e.target.checked) {
-        two.appendChild(card); // move to vital
+        loading.classList.add("tont");
+        two.appendChild(card);
+        // move to vital
       } else {
         core.appendChild(card); // move back
       }
     }
   });
   const two = document.querySelector("#two_dase");
+
   two.addEventListener("click", (event) => {
     if (event.target.id === "bone") {
       const card = event.target.closest(".card");
       const core = document.querySelector("#core");
-      if (event.target.checked) {
-        two.appendChild(card);
-      } else {
+
+      if (!event.target.checked) {
         core.appendChild(card);
+
+        if (two.querySelectorAll(".card").length === 0) {
+          loading.classList.remove("tont");
+        }
       }
     }
   });
