@@ -64,13 +64,12 @@ document.addEventListener("DOMContentLoaded", () => {
     storetextarea = textarea.value;
   });
 
- buttonC.addEventListener("click", () => {
-  if (input.value.trim() && textarea.value.trim()) {
+  buttonC.addEventListener("click", () => {
+    if (input.value.trim() && textarea.value.trim()) {
+      const card = document.createElement("div");
+      card.className = "card";
 
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
+      card.innerHTML = `
       <div class="animations">
         <div class="animations">
               <input type="checkbox" name="" id="bone">
@@ -90,59 +89,65 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
     `;
 
-    // 🔥 SAFE TEXT INSERTION
-    card.querySelector("span").textContent = input.value;
-    card.querySelector("p").textContent = textarea.value;
+      // 🔥 SAFE TEXT INSERTION
+      card.querySelector("span").textContent = input.value;
+      card.querySelector("p").textContent = textarea.value;
 
-    core.appendChild(card);
+      core.appendChild(card);
 
-    // reset
-    input.value = "";
-    textarea.value = "";
-    containCard.classList.remove("display");
-  }
+      // reset
+      input.value = "";
+      textarea.value = "";
+      containCard.classList.remove("display");
+    }
 
-
-  ////// delete task //////
-
-});
-core.addEventListener("click", (e) => {
+    ////// delete task //////
+  });
+  core.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-btn")) {
       const card = e.target.closest(".card");
       card.remove();
     }
   });
-const details=document.querySelector(".details");
-details.addEventListener("click", (e) => {
+  const details = document.querySelector(".details");
+  details.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-btn")) {
       const card = e.target.closest(".card");
       card.remove();
     }
   });
-const circle=document.querySelector(".circle");
-const email=document.querySelector("#emails");
-const emailcollector=user.email.trim();
-const nameF=emailcollector.slice(0,1);
-circle.innerHTML=nameF.toUpperCase();
-email.value=emailcollector;
+  const circle = document.querySelector(".circle");
+  const email = document.querySelector("#emails");
+  const emailcollector = user.email.trim();
+  const nameF = emailcollector.slice(0, 1);
+  circle.innerHTML = nameF.toUpperCase();
+  email.value = emailcollector;
 
-//..........task complete or not..............
+  //..........task complete or not..............
 
-core.addEventListener("click", (e) => {
+  core.addEventListener("click", (e) => {
+    // detect checkbox click
+    if (e.target.id === "bone") {
+      const card = e.target.closest(".card"); // get clicked card
+      const two = document.querySelector("#two_dase");
 
-  // detect checkbox click
-  if (e.target.id === "bone") {
-
-    const card = e.target.closest(".card");   // get clicked card
-    const two = document.querySelector("#two_dase");
-
-    if (e.target.checked) {
-      two.appendChild(card);   // move to vital
-    } else {
-      core.appendChild(card);  // move back
+      if (e.target.checked) {
+        two.appendChild(card); // move to vital
+      } else {
+        core.appendChild(card); // move back
+      }
     }
-  }
-
+  });
+  const two = document.querySelector("#two_dase");
+  two.addEventListener("click", (event) => {
+    if (event.target.id === "bone") {
+      const card = event.target.closest(".card");
+      const core = document.querySelector("#core");
+      if (event.target.checked) {
+        two.appendChild(card);
+      } else {
+        core.appendChild(card);
+      }
+    }
+  });
 });
-});
-
