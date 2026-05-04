@@ -49,7 +49,7 @@ The project is being developed step-by-step with a strong focus on **clean UI, m
 
 ## 📂 Project Structure
 ---
-## 🚀 Development Roadmap
+## Development Roadmap
 
 ### Phase 1: UI Foundation
 - Authentication interface
