@@ -1,134 +1,105 @@
 # 📝 To-Do Application
 
-## 📖 Overview
-
-A modern and scalable To-Do application focused on improving productivity through structured task management.
-The project is being developed step-by-step with emphasis on clean UI, modular code, and real-world features.
+## Overview
+A modern, scalable To-Do application designed to improve productivity through structured task management.  
+The project is being developed step-by-step with a strong focus on **clean UI, modular code, accessibility, and real-world features**.
 
 ---
 
-## ✨ Current Features
+## Features
 
-### 🔹 UI & Navigation
+### UI & Navigation
+- Sidebar tab system with ARIA roles (accessible navigation)
+- Dynamic tab switching with active state styling
+- Clean and structured dashboard layout
 
-* Sidebar tab system (accessible with ARIA roles)
-* Dynamic tab switching with active state styling
-* Clean dashboard layout
+### Task Management 
+- Add tasks via modal form
+- Dynamic task rendering using DOM manipulation
+- Edit existing tasks with pre-filled data
+- Delete tasks instantly
+- Task completion checkbox (UI ready)
 
-### 🔹 Task Management (NEW 🚀)
-
-* Add tasks using modal form
-* Dynamic task rendering (DOM manipulation)
-* Delete tasks instantly
-* Checkbox for task completion (UI ready)
-
-### 🔹 Form System
-
-* Modal-based task input form
-* Input + textarea handling
-* Auto reset after submission
-* Form visibility toggle (fixed bug ✅)
+### Form System
+- Modal-based task input
+- Input + textarea handling
+- Auto-reset after submission
+- Fixed form visibility toggle bug
 
 ### 🔹 UI Enhancements
+- Background blur modal effect
+- Responsive flex-based layout
+- Improved spacing and alignment
+- Fixed z-index and layering issues
 
-* Background blur modal effect
-* Responsive flex layout
-* Improved spacing and alignment
-* Fixed z-index & layering issues
-
-### 🔹 Other Features
-
-* Authentication UI (Sign-in / Sign-up)
-* Social login UI (Google, GitHub, LinkedIn, Facebook)
-* Lottie animation integration
+### 🔹 Additional UI Features
+- Authentication UI (Sign-in / Sign-up)
+- Social login UI (Google, GitHub, LinkedIn, Facebook)
+- Lottie animations integration
 
 ---
 
-## 🛠️ Tech Stack
-
-* HTML5
-* CSS3 (Flexbox, Positioning, Z-index handling)
-* JavaScript (DOM Manipulation, Event Handling)
-* Lottie Player
+## Tech Stack
+- **HTML5**
+- **CSS3** (Flexbox, Positioning, Z-index)
+- **JavaScript** (DOM Manipulation, Event Handling)
+- **Lottie Player**
 
 ---
 
 ## 📂 Project Structure
-
-```
-/css        → Stylesheets  
-/js         → JavaScript logic  
-/assets     → Icons & animations  
-index.html  → Main entry file  
-```
-
 ---
-
 ## 🚀 Development Roadmap
 
-### 🔹 Phase 1: UI Foundation ✅
+### Phase 1: UI Foundation
+- Authentication interface
+- Layout system
+- Core UI interactions
 
-* Authentication interface
-* Layout and design system
-* Basic interactions
+### Phase 2: Core Functionality
+- Form validation (in progress)
+- Improved accessibility (ARIA)
+- Responsive design improvements
 
-### 🔹 Phase 2: Core Functionality 🚧
+### Phase 3: Task System (In Progress)
+- Task creation 
+- Task editing  
+- Task deletion   
+- Completion toggle (UI ready)  
+- LocalStorage integration (next)
 
-* Form validation
-* Improved tab accessibility
-* Responsive design
+### Phase 4: Advanced Features
+- Drag & drop tasks
+- Filtering & sorting
+- Dark mode
 
-### 🔹 Phase 3: To-Do Features 🚧 (In Progress)
-
-* Task creation ✅
-* Task deletion ✅
-* Task completion toggle (UI ready)
-* Local storage integration (next step)
-
-### 🔹 Phase 4: Advanced Features
-
-* Drag & drop tasks
-* Filtering & sorting
-* Dark mode
-
-### 🔹 Phase 5: Backend Integration
-
-* Authentication (Firebase / Node.js)
-* Database integration
-* API-based task handling
+### Phase 5: Backend Integration
+- Authentication (Firebase / Node.js)
+- Database integration
+- API-based task management
 
 ---
 
-## 🎯 Future Enhancements
-
-* Persistent data (LocalStorage / DB)
-* Notifications & reminders
-* Performance optimization
-* Accessibility improvements (ARIA support)
-
----
-
-## 📸 Preview
-
-(Add screenshots here)
+## Future Enhancements
+- Persistent data storage (LocalStorage)
+- Notifications & reminders
+- Performance optimization
+- Enhanced accessibility (ARIA improvements)
 
 ---
 
-## 🧠 Learning Focus
-
-* DOM manipulation in real projects
-* UI/UX structuring
-* State handling in vanilla JavaScript
-* Debugging real-world frontend issues (CSS vs JS)
+## Learning Focus
+- Real-world DOM manipulation
+- UI/UX structuring
+- State handling in vanilla JavaScript
 
 ---
 
-## 👤 Author
-
-Pratik Rajput
+## Author
+**Pratik Rajput**
 
 ---
 
-## 📌 Status
-
-🚧 Active Development — Recently added task system and fixed UI interaction bugs
+## Status
+ **Active Development**  
+Recently implemented task editing, improved UI interactions, and fixed critical event-handling issues.
