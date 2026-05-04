@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   createTask.addEventListener("click", () => {
     console.log("click");
+    card_edit.classList.remove("edit_show");
     containCard.classList.toggle("display");
   });
 
@@ -71,38 +72,82 @@ document.addEventListener("DOMContentLoaded", () => {
 
       card.innerHTML = `
       <div class="animations">
-        <div class="animations">
               <input type="checkbox" name="" id="bone">
             </div>
-      </div>
 
-      <div class="info">
-        <div class="tiltle-div">
-          <h4>Title:</h4>
-          <span></span>
-        </div>
-        <p></p>
-      </div>
-
-      <div class="box">
-        <img src="/assets/svg/delete.svg" class="delete-btn" />
-      </div>
+            <div class="info">
+              <div class="tiltle-div">
+                <h4>Title:</h4>
+                <span></span>
+              </div>
+              <p></p>
+            </div>
+            <div class="edit all">
+              <img src="/assets/svg/edit.svg" class="all" height="20px" alt="">
+            </div>
+            <div class="box">
+              <img
+                src="/assets/svg/delete.svg"
+                alt=""
+                srcset=""
+                class="delete-btn"
+                id="delete"
+              />
+            </div>
     `;
 
-      // 🔥 SAFE TEXT INSERTION
+      //............. SAFE TEXT INSERTION..................
       card.querySelector("span").textContent = input.value;
       card.querySelector("p").textContent = textarea.value;
 
       core.appendChild(card);
 
-      // reset
       input.value = "";
       textarea.value = "";
       containCard.classList.remove("display");
     }
-
-    ////// delete task //////
   });
+  // ...................edit task..................
+  const edit = document.querySelector("#edit_task");
+  const card_edit = document.querySelector(".contain-cards");
+  let duplicate = "";
+  core.addEventListener("click", (e) => {
+    if (!e.target.classList.contains("all")) {
+      return;
+    }
+    containCard.classList.remove("display");
+    card_edit.classList.add("edit_show");
+
+    const card = e.target.closest(".card");
+    duplicate = card;
+    let span = card.querySelector("span").textContent;
+    let p = card.querySelector("p").textContent;
+    const inputs = card_edit.querySelector("#inputs");
+    const textarea = card_edit.querySelector("textarea");
+    inputs.value = span;
+    textarea.value = p;
+  });
+
+  const btnclick = document.querySelector("#cbtns");
+  btnclick.addEventListener("click", () => {
+    let span = duplicate.querySelector("span").textContent;
+    let p = duplicate.querySelector("p").textContent;
+    const inputs = card_edit.querySelector("#inputs");
+    const textarea = card_edit.querySelector("textarea");
+    if (inputs.value == span && textarea.value == p) {
+      alert("not any change");
+      return;
+    }
+
+    duplicate.querySelector("span").textContent = inputs.value;
+    duplicate.querySelector("p").textContent = textarea.value;
+
+    inputs.value = " ";
+    textarea.value = " ";
+    card_edit.classList.remove("edit_show");
+  });
+
+  //...............delete task.............................
   core.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-btn")) {
       const card = e.target.closest(".card");
@@ -136,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
         two.appendChild(card);
         // move to vital
       } else {
-        core.appendChild(card); // move back
+        core.appendChild(card);
       }
     }
   });
