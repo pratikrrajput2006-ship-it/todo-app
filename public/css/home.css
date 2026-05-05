@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
@@ -21,11 +21,26 @@ body {
 body::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: 
-  radial-gradient(circle at 20% 30%, rgba(99,102,241,0.10) 0%, transparent 50%),
-  radial-gradient(circle at 80% 80%, rgba(99,102,241,0.06) 0%, transparent 50%),
-  radial-gradient(circle at 50% 20%, rgba(99,102,241,0.05) 0%, transparent 50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(99, 102, 241, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(99, 102, 241, 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(99, 102, 241, 0.05) 0%,
+      transparent 50%
+    );
   filter: blur(80px);
   z-index: -1;
   pointer-events: none;
@@ -57,7 +72,7 @@ body::before {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 .product-logo {
   background: rgba(255, 255, 255, 0.6);
@@ -126,13 +141,19 @@ body::before {
   color: #0f172a;
 }
 .design:hover {
- background: #0f172a;
+  background: #0f172a;
   color: white;
   transform: translateY(-1px);
 }
 /* Primary Button */
-#sign-in, #click_Future, .sign-form button[type="submit"] {
- background: #0f172a;
+#sign-in {
+  background: #0f172a;
+  width: 120px;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+.sign-form button[type="submit"] {
+  background: #0f172a;
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
 }
@@ -142,7 +163,9 @@ body::before {
   border: none;
 }
 
-#sign-in:hover, #click_Future:hover, .sign-form button[type="submit"]:hover {
+#sign-in:hover,
+#click_Future:hover,
+.sign-form button[type="submit"]:hover {
   background: #0f172a;
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
@@ -157,6 +180,8 @@ body::before {
 }
 /* Secondary Button */
 #sign-up {
+  width: 120px;
+
   background: transparent;
   color: #0f172a;
   border: 1px solid #e5e7eb;
@@ -166,7 +191,8 @@ body::before {
   transform: translateY(-1px);
 }
 /* Modals */
-.form1, .form2 {
+.form1,
+.form2 {
   position: fixed;
   top: 0;
   left: 0;
@@ -208,7 +234,8 @@ body::before {
   }
 }
 
-.remove-btn1, .remove-btn2 {
+.remove-btn1,
+.remove-btn2 {
   border: none;
   background: #ffffff;
   display: flex;
@@ -223,15 +250,17 @@ body::before {
   cursor: pointer;
   transition: all 0.2s ease;
   z-index: 12;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.remove-btn1:hover, .remove-btn2:hover {
+.remove-btn1:hover,
+.remove-btn2:hover {
   background: #f1f5f9;
   transform: scale(1.05);
 }
 
-.remove-btn1 img, .remove-btn2 img {
+.remove-btn1 img,
+.remove-btn2 img {
   height: 16px;
 }
 
@@ -308,20 +337,48 @@ label.fix {
 }
 
 /* Layout for Form 1 */
-.form1 #names { order: 2; }
-.form1 #one { order: 1; }
-.form1 #emailss { order: 4; }
-.form1 #two { order: 3; }
-.form1 input[name="password"] { order: 6; }
-.form1 #three { order: 5; }
-.form1 button[type="submit"] { order: 7; margin-top: 8px; width: 100%; }
+.form1 #names {
+  order: 2;
+}
+.form1 #one {
+  order: 1;
+}
+.form1 #emailss {
+  order: 4;
+}
+.form1 #two {
+  order: 3;
+}
+.form1 input[name="password"] {
+  order: 6;
+}
+.form1 #three {
+  order: 5;
+}
+.form1 button[type="submit"] {
+  order: 7;
+  margin-top: 8px;
+  width: 100%;
+}
 
 /* Layout for Form 2 */
-.form2 input[name="email"] { order: 2; }
-.form2 #one { order: 1; }
-.form2 input[name="password"] { order: 4; }
-.form2 #two { order: 3; }
-.form2 button[type="submit"] { order: 5; margin-top: 8px; width: 100%; }
+.form2 input[name="email"] {
+  order: 2;
+}
+.form2 #one {
+  order: 1;
+}
+.form2 input[name="password"] {
+  order: 4;
+}
+.form2 #two {
+  order: 3;
+}
+.form2 button[type="submit"] {
+  order: 5;
+  margin-top: 8px;
+  width: 100%;
+}
 
 .blur {
   filter: blur(8px);
