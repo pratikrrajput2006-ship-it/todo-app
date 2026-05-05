@@ -387,8 +387,8 @@ b {
 }
 
 .box:hover {
-  background-color:transparent;
-  border-color:#ababad;
+  background-color: transparent;
+  border-color: #ababad;
 }
 
 .box img {
@@ -398,7 +398,7 @@ b {
 
 .box:hover img {
   opacity: 1;
-  filter:invert(0.4); /* roughly red */
+  filter: invert(0.4); /* roughly red */
 }
 
 #checkbox {
@@ -673,6 +673,38 @@ h1 {
   display: block;
 }
 
-.my_task{
+.my_task {
   filter: invert(1);
+}
+.notification {
+  position: fixed;
+  top: 20px;
+  left: 70%;
+  transform: translate(-50%, -120px);
+
+  width: 380px;
+  height: 60px;
+
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.3s ease;
+  opacity: 0;
+}
+.notification.hover {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+.notification p {
+  width: auto;
 }

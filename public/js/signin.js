@@ -53,7 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const input = document.querySelector("#input");
   const textarea = document.querySelector("#textarea");
   const core = document.querySelector("#core");
-
+  const notifi = document.querySelector(".notification");
+  const para = document.querySelector("#para");
   let storeinput = "";
   let storetextarea = "";
 
@@ -101,7 +102,11 @@ document.addEventListener("DOMContentLoaded", () => {
       card.querySelector("p").textContent = textarea.value;
 
       core.appendChild(card);
-
+      para.textContent = "Task Created Successfully.";
+      notifi.classList.add("hover");
+      setTimeout(() => {
+        notifi.classList.remove("hover");
+      }, 3000);
       input.value = "";
       textarea.value = "";
       containCard.classList.remove("display");
@@ -134,14 +139,25 @@ document.addEventListener("DOMContentLoaded", () => {
     let p = duplicate.querySelector("p").textContent;
     const inputs = card_edit.querySelector("#inputs");
     const textarea = card_edit.querySelector("textarea");
+    const notifi = document.querySelector(".notification");
+    const para = document.querySelector("#para");
+
     if (inputs.value == span && textarea.value == p) {
-      alert("not any change");
+      para.textContent = "Not any change";
+      notifi.classList.add("hover");
+      setTimeout(() => {
+        notifi.classList.remove("hover");
+      }, 3000);
       return;
     }
 
     duplicate.querySelector("span").textContent = inputs.value;
     duplicate.querySelector("p").textContent = textarea.value;
-
+    para.textContent = "Changes Successfully Updates.";
+    notifi.classList.add("hover");
+    setTimeout(() => {
+      notifi.classList.remove("hover");
+    }, 3000);
     inputs.value = " ";
     textarea.value = " ";
     card_edit.classList.remove("edit_show");
