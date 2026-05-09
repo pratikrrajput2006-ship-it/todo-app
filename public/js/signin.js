@@ -65,7 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
   textarea.addEventListener("input", () => {
     storetextarea = textarea.value;
   });
-
   buttonC.addEventListener("click", () => {
     if (input.value.trim() && textarea.value.trim()) {
       const card = document.createElement("div");
@@ -148,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         notifi.classList.remove("hover");
       }, 3000);
+      card_edit.classList.remove("edit_show");
       return;
     }
 
@@ -187,7 +187,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //..........task complete or not..............
   const loading = document.querySelector(".loading");
   core.addEventListener("click", (e) => {
-    // detect checkbox click
     if (e.target.id === "bone") {
       const card = e.target.closest(".card"); // get clicked card
       const two = document.querySelector("#two_dase");
