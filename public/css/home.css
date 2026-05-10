@@ -206,11 +206,9 @@ body::before {
   -webkit-backdrop-filter: blur(8px);
   z-index: 100;
 }
-
 .active {
   display: flex !important;
 }
-
 .sign-form {
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 20px;
@@ -320,7 +318,6 @@ input {
   transition: all 0.3s ease;
   margin-bottom: 16px;
 }
-
 input:focus {
   border-color: #6366f1;
   background: #ffffff;
